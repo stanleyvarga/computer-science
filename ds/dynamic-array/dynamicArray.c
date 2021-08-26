@@ -25,8 +25,18 @@ typedef struct _vector
 p_vector newVector()
 {
 	p_vector v = malloc(sizeof(vector));
+	if (v == NULL)
+	{
+		fprintf(stderr, "Not enough memory!");
+		abort();
+	}
 	v->capacity = DEFAULT_CAPACITY;
 	v->array = malloc(sizeof(value_t) * v->capacity);
+	if (v->array == NULL)
+	{
+		fprintf(stderr, "Not enough memory!");
+		abort();
+	}
 	v->size = 0;
 
 	return v;
