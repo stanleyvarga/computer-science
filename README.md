@@ -10,5 +10,5 @@ https://stackoverflow.com/questions/66662820/m1-docker-preview-and-keycloak-imag
 
 ```bash
 docker run -it --rm -v `pwd`:/usr/src/c -w /usr/src/c frolvlad/alpine-gcc /bin/sh
-gcc -Wall ds/dynamic-array/dynamicArray.c -o main && clear && ./main
+gcc -Wall ds/dynamic-array/dynamicArray.c -o main && ./main
 ```

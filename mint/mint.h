@@ -2,14 +2,16 @@
 #define MINT_H
 #define DEBUG 1
 
-#define _assert(test)                                                           \
-	do                                                                          \
-	{                                                                           \
-		if (!(test))                                                            \
-		{                                                                       \
-			printf("\n 🤬 %s | %s | line %d  \n", #test, __func__, __LINE__); \
-			return 1;                                                           \
-		}                                                                       \
+// printf("\n 🤬 %s | %s | line %d  \n", #test, __func__, __LINE__);
+
+#define _assert(test)                                                                                \
+	do                                                                                               \
+	{                                                                                                \
+		if (!(test))                                                                                 \
+		{                                                                                            \
+			fprintf(stdout, "\n l: %d | %s -> %d \n func: %s\n", __LINE__, #test, (test), __func__); \
+			return 1;                                                                                \
+		}                                                                                            \
 	} while (0)
 #define _run_tests(test) \
 	do                   \
