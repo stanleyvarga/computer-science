@@ -1,9 +1,12 @@
 /** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
 module.exports = {
   rootDir: "./",
-  testMatch: ["<rootDir>/**/*.spec.ts"],
+  testMatch: ["<rootDir>/**/*.{spec,test}.{js,ts}"],
   testPathIgnorePatterns: ["<rootDir>/__mocks__/*"],
   preset: "ts-jest",
+  transform: {
+    "^.+\\.(js|jsx)?$": "babel-jest",
+  },
   collectCoverage: true,
   collectCoverageFrom: ["src/**/*.{js,jsx,ts,tsx}", "!<rootDir>/node_modules/"],
   coverageThreshold: {
