@@ -9,3 +9,8 @@ export function containsDuplicate(nums: number[]): boolean {
   }
   return false;
 }
+
+export function containsDuplicate_Set(nums: number[]): boolean {
+  const S = new Set(nums);
+  return S.size !== nums.length;
+}
